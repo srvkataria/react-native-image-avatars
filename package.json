@@ -1,6 +1,6 @@
 {
   "name": "react-native-image-avatars",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A react native component library with different types of avatars or frames for pictures",
   "main": "index.js",
   "scripts": {

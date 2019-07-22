@@ -93,7 +93,7 @@ class Avatar extends React.Component {
         return(
           <View elevation={elevate} style={outerStyle}>
             <View style={innerStyle}>
-              <Text style={{fontSize: 20}}>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
+              <Text>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
             </View>
           </View>
         );
