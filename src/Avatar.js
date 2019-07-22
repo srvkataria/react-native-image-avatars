@@ -49,6 +49,12 @@ class Avatar extends Component {
       border_width = width + 10;
       border_height = height + 10;
       border_radius = (width + 10)/2;
+
+      if(this.props.size == "x-large") {
+        border_width = border_width + 10;
+        border_height = border_height + 10;
+        border_radius = (border_width + 10)/2;
+      }
     }
 
     if(this.props.shape == 'square') {
@@ -85,14 +91,13 @@ class Avatar extends Component {
         } 
 
         let textStyle={
-          fontSize: textFontSize, 
           color: this.props.textColor
         } 
         
         return(
           <View elevation={elevate} style={outerStyle}>
             <View style={innerStyle}>
-              <Text style={textStyle}>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
+              <Text style={[textStyle, {fontSize: parseInt(textFontSize)}]}>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
             </View>
           </View>
         );
