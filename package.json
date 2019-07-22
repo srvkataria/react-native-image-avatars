@@ -1,0 +1,37 @@
+{
+  "name": "react-native-image-avatars",
+  "version": "1.0.0",
+  "description": "A react native component library with different types of avatars or frames for pictures",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srvkataria/react-native-image-avatars.git"
+  },
+  "bugs": {
+    "url": "https://github.com/srvkataria/react-native-image-avatars/issues"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-avatars",
+    "avatars",
+    "frames",
+    "photo-frames",
+    "image-avatars",
+    "face-frame",
+    "picture-frames",
+    "picture-avatars"
+  ],
+  "author": "Saurabh Kataria",
+  "license": "MIT",
+  "homepage": "https://github.com/srvkataria/react-native-image-avatars#readme",
+  "devDependencies": {
+    "metro-react-native-babel-preset": "^0.51.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "prop-types": "^15.6.2"
+  }
+}
