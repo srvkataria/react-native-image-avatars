@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-import { View, ScrollView, TouchableOpacity, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-const styles = StyleSheet.create({
-  text: { // eslint-disable-line react-native/no-unused-styles
-    color: '#000',
-    fontSize: 20,
-  },
-});
 
-class Avatar extends Component {
+class Avatar extends React.Component {
+  
   initialCapitals = (text) => {
     return text.toUpperCase().split(' ').map((s) => s.charAt(0).toUpperCase()).join('');
   }
@@ -18,27 +13,10 @@ class Avatar extends Component {
     this.text.setNativeProps(nativeProps);
   }
 
-  getCustomTextStyle = () => {
-    const { style } = this.props;
-
-    if (!style) {
-      return styles.text;
-    }
-
-    const customFontSize = StyleSheet.flatten(style).fontSize;
-    if (!Number.isInteger(customFontSize)) {
-      return [styles.text, style];
-    }
-    const fontSize = 40;
-    return [styles.text, style, { fontSize }];
-    
-  }
-
   renderAvatar = () => {
     let elevate = 0;
     let width = 50, height = 50, radius = 50/2; 
-    let textFontSize = this.props.textFontSize;        
-
+    
     if(this.props.shadow) {
       elevate = 15;
     }
@@ -47,27 +25,22 @@ class Avatar extends Component {
       width = width; 
       height = height; 
       radius = radius;
-      textFontSize = this.props.textFontSize;
     } else if(this.props.size == "small") {
       width = width*2; 
       height = height*2; 
       radius = radius*2;
-      textFontSize = this.props.textFontSize + 10;
     } else if(this.props.size == "medium") {
       width = width*3; 
       height = height*3; 
       radius = radius*3;
-      textFontSize = this.props.textFontSize + 20;
     } else if(this.props.size == "large") {
       width = width*4; 
       height = height*4; 
       radius = radius*4;
-      textFontSize = this.props.textFontSize + 40;
     } else if(this.props.size == "x-large") {
       width = width*5; 
       height = height*5; 
       radius = radius*5;
-      textFontSize = this.props.textFontSize + 60;
     }
 
     let border_width = width, border_height = height, border_radius = radius;
@@ -117,11 +90,10 @@ class Avatar extends Component {
           alignItems: 'center'
         } 
 
-        const textStyle = this.getCustomTextStyle();
         return(
           <View elevation={elevate} style={outerStyle}>
             <View style={innerStyle}>
-              <Text style={textStyle}>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
+              <Text style={{fontSize: 20}}>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
             </View>
           </View>
         );
@@ -162,9 +134,7 @@ Avatar.propTypes = {
   borderColor: PropTypes.string,
   shadow: PropTypes.bool,
   textBackgroundFill: PropTypes.string,
-  textColor: PropTypes.string,
-  textFontSize: PropTypes.number,
-  style: Text.propTypes.style
+  textColor: PropTypes.string
 }
 
 Avatar.defaultProps = {
@@ -173,8 +143,7 @@ Avatar.defaultProps = {
   shape: 'circle',
   shadow: false,
   textBackgroundFill: '#C0C0C0',
-  textColor: '#000',
-  textFontSize: 20
+  textColor: '#000'
 };
 
 export default Avatar;
