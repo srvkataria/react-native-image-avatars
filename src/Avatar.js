@@ -1,10 +1,37 @@
 import React, { Component } from 'react';
-import { View, ScrollView, TouchableOpacity, Text, Image } from 'react-native';
+import { View, ScrollView, TouchableOpacity, Text, Image, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
+
+const styles = StyleSheet.create({
+  text: { // eslint-disable-line react-native/no-unused-styles
+    color: '#000',
+    fontSize: 20,
+  },
+});
 
 class Avatar extends Component {
   initialCapitals = (text) => {
     return text.toUpperCase().split(' ').map((s) => s.charAt(0).toUpperCase()).join('');
+  }
+
+  setNativeProps(nativeProps) {
+    this.text.setNativeProps(nativeProps);
+  }
+
+  getCustomTextStyle = () => {
+    const { style } = this.props;
+
+    if (!style) {
+      return styles.text;
+    }
+
+    const customFontSize = StyleSheet.flatten(style).fontSize;
+    if (!Number.isInteger(customFontSize)) {
+      return [styles.text, style];
+    }
+    const fontSize = 40;
+    return [styles.text, style, { fontSize }];
+    
   }
 
   renderAvatar = () => {
@@ -90,14 +117,11 @@ class Avatar extends Component {
           alignItems: 'center'
         } 
 
-        let textStyle={
-          color: this.props.textColor
-        } 
-        
+        const textStyle = this.getCustomTextStyle();
         return(
           <View elevation={elevate} style={outerStyle}>
             <View style={innerStyle}>
-              <Text style={[textStyle]}>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
+              <Text style={textStyle}>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
             </View>
           </View>
         );
@@ -116,9 +140,7 @@ class Avatar extends Component {
             resizeMode="cover"/>
         </View>
       );
-    }
-    
-      
+    }   
   }
 
   render() {
@@ -141,7 +163,8 @@ Avatar.propTypes = {
   shadow: PropTypes.bool,
   textBackgroundFill: PropTypes.string,
   textColor: PropTypes.string,
-  textFontSize: PropTypes.number
+  textFontSize: PropTypes.number,
+  style: Text.propTypes.style
 }
 
 Avatar.defaultProps = {
