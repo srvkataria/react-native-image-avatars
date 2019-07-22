@@ -97,7 +97,7 @@ class Avatar extends Component {
         return(
           <View elevation={elevate} style={outerStyle}>
             <View style={innerStyle}>
-              <Text style={[textStyle, {fontSize: 20}]}>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
+              <Text style={[textStyle]}>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
             </View>
           </View>
         );
