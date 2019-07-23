@@ -109,7 +109,8 @@ class Avatar extends Component {
         } 
 
         let textStyle={
-          color: this.props.textColor
+          color: this.props.textColor,
+          fontSize: textFontSize
         } 
         
         return(
