@@ -1,26 +1,8 @@
-Skip to content
- 
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@srvkataria 
-1
-0 0 srvkataria/react-native-image-avatars
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Security  Insights  Settings
-react-native-image-avatars/src/Avatar.js
-@srvkataria srvkataria Version 1.0.5
-063c343 14 hours ago
-157 lines (138 sloc)  3.86 KB
-    
 import React, { Component } from 'react';
 import { View, ScrollView, TouchableOpacity, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
-class Avatar extends Component {
+export default class Avatar extends Component {
   initialCapitals = (text) => {
     return text.toUpperCase().split(' ').map((s) => s.charAt(0).toUpperCase()).join('');
   }
