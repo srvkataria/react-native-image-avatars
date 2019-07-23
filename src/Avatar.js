@@ -1,22 +1,35 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@srvkataria 
+1
+0 0 srvkataria/react-native-image-avatars
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Security  Insights  Settings
+react-native-image-avatars/src/Avatar.js
+@srvkataria srvkataria Version 1.0.5
+063c343 14 hours ago
+157 lines (138 sloc)  3.86 KB
+    
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, ScrollView, TouchableOpacity, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
-
-class Avatar extends React.Component {
-  
+class Avatar extends Component {
   initialCapitals = (text) => {
     return text.toUpperCase().split(' ').map((s) => s.charAt(0).toUpperCase()).join('');
-  }
-
-  setNativeProps(nativeProps) {
-    this.text.setNativeProps(nativeProps);
   }
 
   renderAvatar = () => {
     let elevate = 0;
     let width = 50, height = 50, radius = 50/2; 
-    
+    let textFontSize = this.props.textFontSize;        
+
     if(this.props.shadow) {
       elevate = 15;
     }
@@ -25,22 +38,27 @@ class Avatar extends React.Component {
       width = width; 
       height = height; 
       radius = radius;
+      textFontSize = this.props.textFontSize;
     } else if(this.props.size == "small") {
       width = width*2; 
       height = height*2; 
       radius = radius*2;
+      textFontSize = this.props.textFontSize + 10;
     } else if(this.props.size == "medium") {
       width = width*3; 
       height = height*3; 
       radius = radius*3;
+      textFontSize = this.props.textFontSize + 20;
     } else if(this.props.size == "large") {
       width = width*4; 
       height = height*4; 
       radius = radius*4;
+      textFontSize = this.props.textFontSize + 40;
     } else if(this.props.size == "x-large") {
       width = width*5; 
       height = height*5; 
       radius = radius*5;
+      textFontSize = this.props.textFontSize + 60;
     }
 
     let border_width = width, border_height = height, border_radius = radius;
@@ -90,10 +108,14 @@ class Avatar extends React.Component {
           alignItems: 'center'
         } 
 
+        let textStyle={
+          color: this.props.textColor
+        } 
+        
         return(
           <View elevation={elevate} style={outerStyle}>
             <View style={innerStyle}>
-              <Text>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
+              <Text style={[textStyle]}>{this.initialCapitals(this.props.text).slice(0, 2)}</Text>
             </View>
           </View>
         );
@@ -112,7 +134,9 @@ class Avatar extends React.Component {
             resizeMode="cover"/>
         </View>
       );
-    }   
+    }
+    
+      
   }
 
   render() {
@@ -134,7 +158,8 @@ Avatar.propTypes = {
   borderColor: PropTypes.string,
   shadow: PropTypes.bool,
   textBackgroundFill: PropTypes.string,
-  textColor: PropTypes.string
+  textColor: PropTypes.string,
+  textFontSize: PropTypes.number
 }
 
 Avatar.defaultProps = {
@@ -143,7 +168,6 @@ Avatar.defaultProps = {
   shape: 'circle',
   shadow: false,
   textBackgroundFill: '#C0C0C0',
-  textColor: '#000'
+  textColor: '#000',
+  textFontSize: 20
 };
-
-export default Avatar;
