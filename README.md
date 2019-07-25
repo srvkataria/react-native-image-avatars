@@ -57,9 +57,15 @@ Text Avatar:
 
 | Name                      | Description                              | Default     | Type   |
 |---------------------------|------------------------------------------|-------------|--------|
-| type                      | 'image' or 'text'  | 'image'           | String |
-| imageUrl               | URL of the image      | null       | String |
-| shadow | Adds shadow ( elevation {15} for android & equivalent for IOS ) | true     | Boolean |
+| type                      | 'image' or 'text'  | image           | String |
+| imageUrl               | URL of the image      | none       | String |
+| shadow | Shadow effect: elevation {15} for android & equivalent for IOS | true     | Boolean |
+| size | Values: 'x-small', 'small', 'medium', 'large' or 'x-large' |   small   | String |
+| shape | Values: 'circle' or 'square' |   circle   | String |
+| text | Extracts initials of each word (upto 2 slices max). Example: text='David Benton Woods' would eventually display 'DB' |   none   | String |
+| borderColor | Border to the shape with color specified |   none   | String |
+| textColor | Text color for text avatar |   #000   | String |
+| textBackgroundFill | Background color for text avatar  |   #C0C0C0   | String |
 
 
 ## Contributing
