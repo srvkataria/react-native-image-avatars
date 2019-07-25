@@ -6,6 +6,8 @@ A simple and fully customizable React Native component that displays avatars for
 * Avatars with border colors
 * Avatars for textual data (slices initial character of the word automatically)
 
+![](assets/react-native-image-avatars_1.gif)
+
 ## Installation
 
 If using yarn:
