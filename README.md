@@ -38,6 +38,7 @@ Image Avatar:
 ``` 
 
 Text Avatar:
+
 ![](assets/react-native-image-avatars-text_avatar_1.png)
 ```
 <Avatar
