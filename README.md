@@ -2,11 +2,10 @@
 
 A simple and fully customizable React Native component that displays avatars for images & text. 
 
-* Rounded & Square shaped avatars
-* Avatars with border colors
-* Avatars for textual data (slices initial character of the word automatically)
+Features             |  Visual Effects
+:-------------------------:|:-------------------------:
+<b>* Rounded & Square shaped avatars</b><br/><b>* Avatars with border colors</b><br/><b>* Avatars for textual data (slices initial character of the word automatically)</b> | ![](assets/react-native-image-avatars_1.gif)
 
-![](assets/react-native-image-avatars_1.gif)
 
 ## Installation
 
