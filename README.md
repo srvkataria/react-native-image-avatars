@@ -26,7 +26,7 @@ npm i react-native-image-avatars
 import { Avatar } from 'react-native-image-avatars';
 ```
 
-![Text Avatar:](assets/react-native-image-avatars-img_avatar_1.png)
+![Text Avatar:](assets/react-native-image-avatars-img_avatar_2.png)
 ```
 <Avatar
   imageUrl = 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500'
