@@ -50,6 +50,17 @@ Text Avatar:
   shadow
 />
 ``` 
+## Documentation
+
+### Component Props Reference
+
+
+| Name                      | Description                              | Default     | Type   |
+|---------------------------|------------------------------------------|-------------|--------|
+| type                      | 'image' or 'text'  | 'image'           | String |
+| imageUrl               | URL of the image      | null       | String |
+| shadow | Adds shadow ( elevation {15} for android & equivalent for IOS ) | true     | Boolean |
+
 
 ## Contributing
 Pull requests are always welcome! Feel free to open a new GitHub issue for any changes that can be made.
