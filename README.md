@@ -38,15 +38,14 @@ Image Avatar:
 ``` 
 
 Text Avatar:
-
+![](assets/react-native-image-avatars-text_avatar_1.png)
 ```
 <Avatar
   type = 'text'
   text='Davis Benton'
   size="x-small"
   borderColor = "#f2f2f2"
-  textBackgroundFill = '#000'
-  textColor = '#fff'
+  textBackgroundFill = '#fff'
   shadow
 />
 ``` 
@@ -64,7 +63,6 @@ Text Avatar:
 | shape | Values: 'circle' or 'square' |   circle   | String |
 | text | Extracts initials of each word (upto 2 slices max). Example: text='David Benton Woods' would eventually display 'DB' |   none   | String |
 | borderColor | Border to the shape with color specified |   none   | String |
-| textColor | Text color for text avatar |   #000   | String |
 | textBackgroundFill | Background color for text avatar  |   #C0C0C0   | String |
 
 
