@@ -4,7 +4,7 @@ A simple and fully customizable React Native component that displays avatars for
 
 Features             |  Visual Effects
 :-------------------------:|:-------------------------:
-<b>* Rounded & Square shaped avatars</b><br/><b>* Avatars with border colors</b><br/><b>* Avatars for textual data (slices initial character of the word automatically)</b> | ![](assets/react-native-image-avatars_1.gif)
+<b>* Rounded & Square shaped avatars</b><br/><b>* Avatars with border colors</b><br/><b>* Avatars for textual data</b> | ![](assets/react-native-image-avatars_1.gif)
 
 
 ## Installation
@@ -60,7 +60,7 @@ import { Avatar } from 'react-native-image-avatars';
 | shadow | Shadow effect: elevation {15} for android & equivalent for IOS | true     | Boolean |
 | size | Values: 'x-small', 'small', 'medium', 'large' or 'x-large' |   small   | String |
 | shape | Values: 'circle' or 'square' |   circle   | String |
-| text | Extracts initials of each word (upto 2 slices max). Example: text='David Benton Woods' would eventually display 'DB' |   none   | String |
+| text | Extracts initials of each word (upto 2 slices max). <br/>Example: text='David Benton Woods' would eventually display 'DB' |   none   | String |
 | borderColor | Border to the shape with color specified |   none   | String |
 | textBackgroundFill | Background color for text avatar  |   #C0C0C0   | String |
 
